@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const FruitContainer = styled.div`
@@ -8,7 +8,7 @@ const FruitContainer = styled.div`
     margin-top: 50px;
 `;
 
-const FruitTile = styled.div`
+const FruitTile = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,8 @@ const FruitTile = styled.div`
   height: 250px;
   width: calc(100% / 3 - 40px);
   border-radius: 8px;
+  color: black;
+  text-decoration: none;
   box-shadow: 0 0 10px 10px #eeeeee;
   margin: 40px 20px 20px 20px;
 `;
@@ -44,12 +46,12 @@ const Underline = styled.div`
   border-radius: 5px;
 `;
 
-const ListingGrid = ({ items }) => {
+function ListingGrid({ items }) {
   return (
     <FruitContainer>
       {items.map(item => {
         return (
-          <FruitTile key={item.id}>
+          <FruitTile key={item.id} to={`/items/${item.id}`}>
             <FruitImage src={item.imageSrc} />
             <FruitName>{item.name}</FruitName>
             <Underline/>
@@ -59,7 +61,7 @@ const ListingGrid = ({ items }) => {
       })}
     </FruitContainer>
   )
-};
-
+}
 
 export default ListingGrid;
+export {Italics};

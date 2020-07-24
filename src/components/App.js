@@ -5,8 +5,9 @@ import GlobalStyles from './GlobalStyles';
 import Header from './Header';
 import Homepage from './Homepage';
 import About from './About';
+import ItemDetails from './ItemDetails';
 
-const App = ({ items }) => {
+function App({ items, sellers }) {
   return (
     <Router>
       <link
@@ -18,9 +19,10 @@ const App = ({ items }) => {
       <Switch>
         <Route exact path='/'><Homepage items={items} /></Route>
         <Route exact path='/about'><About /></Route>
+        <Route exact path='/items/:itemID'><ItemDetails items={items} sellers={sellers} /></Route>
       </Switch>
     </Router>
   );
-};
+}
 
 export default App;

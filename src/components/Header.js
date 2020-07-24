@@ -7,7 +7,7 @@ const Nav = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 var(--document-padding);
   height: 90px;
   margin-bottom: 80px;
 `;
@@ -26,14 +26,12 @@ const Heading = styled.h1`
 `;
 
 const StyledLink = styled(Link)`
-  
   text-decoration: none;
   color: dodgerblue;
-
   font-size: 22px;
 `;
 
-const Header = () => {
+function Header() {
   return (
     <Nav>
       <Heading>Fruit Emporium</Heading>
@@ -43,6 +41,6 @@ const Header = () => {
       </Navbar>
     </Nav>
   );
-};
+}
 
 export default Header;
