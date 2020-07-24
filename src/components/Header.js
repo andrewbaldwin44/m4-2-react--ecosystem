@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.header`
-  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;900&display=swap');
   font-family: "M PLUS Rounded 1c", sans-serif;
   display: flex;
   align-items: center;
@@ -27,10 +26,11 @@ const Heading = styled.h1`
 `;
 
 const StyledLink = styled(Link)`
+  
   text-decoration: none;
   color: dodgerblue;
-  font-weight: 200;
-  font-size: 20px;
+
+  font-size: 22px;
 `;
 
 const Header = () => {
