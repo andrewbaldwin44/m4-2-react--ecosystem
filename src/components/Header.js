@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.header`
@@ -25,10 +25,26 @@ const Heading = styled.h1`
   font-weight: bold;
 `;
 
-const StyledLink = styled(Link)`
+const NavLinkContainer = styled.div`
+  height: 40px;
+`;
+
+const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: dodgerblue;
   font-size: 22px;
+
+  &.active ~ div {
+    display: block;
+  }
+`;
+
+const Underline = styled.div`
+  display: none;
+  height: 4px;
+  width: 100%;
+  background-color: red;
+  border-radius: 10px;
 `;
 
 function Header() {
@@ -36,8 +52,14 @@ function Header() {
     <Nav>
       <Heading>Fruit Emporium</Heading>
       <Navbar>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
+        <NavLinkContainer>
+          <StyledLink exact to="/" activeClassName="active">Home</StyledLink>
+          <Underline></Underline>
+        </NavLinkContainer>
+        <NavLinkContainer>
+          <StyledLink to="/about" activeClassName="active">About</StyledLink>
+          <Underline></Underline>
+        </NavLinkContainer>
       </Navbar>
     </Nav>
   );
